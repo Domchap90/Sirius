@@ -1,0 +1,13 @@
+/* line 1, static/scss/main.scss */
+.navbar-brand {
+  background-color: #86959c;
+  text-align: center; }
+
+/* line 6, static/scss/main.scss */
+#nav_logo {
+  height: 140px; }
+
+@media (min-width: 769px) {
+  /* line 12, static/scss/main.scss */
+  .navbar-brand {
+    text-align: left; } }

@@ -1,0 +1,27 @@
+/* line 1, static/scss/main.scss */
+.navbar {
+  background-color: #86959c;
+  height: 140px; }
+
+/* line 6, static/scss/main.scss */
+.navbar-brand {
+  text-align: center; }
+
+/* line 10, static/scss/main.scss */
+#nav_logo {
+  height: inherit; }
+
+/* line 15, static/scss/main.scss */
+.navbar-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-decoration: none; }
+
+@media (min-width: 769px) {
+  /* line 22, static/scss/main.scss */
+  .navbar-brand {
+    width: 33%;
+    text-align: left; }
+  /* line 26, static/scss/main.scss */
+  .navbar-menu {
+    width: 66%; } }

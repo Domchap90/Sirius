@@ -1,0 +1,23 @@
+/* line 1, static/scss/main.scss */
+.navbar {
+  background-color: #86959c; }
+
+/* line 4, static/scss/main.scss */
+.navbar-brand {
+  text-align: center; }
+
+/* line 9, static/scss/main.scss */
+#nav_logo {
+  height: 140px; }
+
+/* line 14, static/scss/main.scss */
+.navbar-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-decoration: none; }
+
+@media (min-width: 769px) {
+  /* line 21, static/scss/main.scss */
+  .navbar-brand {
+    width: 50%;
+    text-align: left; } }

@@ -1,0 +1,52 @@
+/* line 8, static/scss/main.scss */
+.navbar {
+  display: flex;
+  background-color: #86959c;
+  height: 140px; }
+
+/* line 14, static/scss/main.scss */
+.navbar-menu {
+  display: none; }
+
+/* line 18, static/scss/main.scss */
+.navbar-brand {
+  text-align: center; }
+
+/* line 22, static/scss/main.scss */
+#nav_logo {
+  height: 140px; }
+
+/* line 27, static/scss/main.scss */
+.navbar-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-decoration: none; }
+
+@media (min-width: 769px) {
+  /* line 35, static/scss/main.scss */
+  .navbar-brand {
+    width: 33%;
+    text-align: left; }
+  /* line 40, static/scss/main.scss */
+  .navbar-menu {
+    display: flex;
+    width: 66%; }
+    /* line 44, static/scss/main.scss */
+    .navbar-menu .navbar-start {
+      width: 24.25%;
+      display: flex;
+      align-items: flex-end; }
+    /* line 48, static/scss/main.scss */
+    .navbar-menu .navbar-end {
+      width: 75.75%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around; } }
+
+@media (min-width: 1024px) {
+  /* line 58, static/scss/main.scss */
+  .navbar-menu .navbar-start {
+    width: 50%; }
+  /* line 62, static/scss/main.scss */
+  .navbar-menu .navbar-end {
+    width: 50%; } }

@@ -1,0 +1,39 @@
+/* line 6, static/scss/main.scss */
+.navbar {
+  display: flex;
+  background-color: #86959c;
+  height: 140px; }
+
+/* line 12, static/scss/main.scss */
+.navbar-brand {
+  text-align: center; }
+
+/* line 16, static/scss/main.scss */
+#nav_logo {
+  height: 140px; }
+
+/* line 21, static/scss/main.scss */
+.navbar-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-decoration: none; }
+
+@media (min-width: 769px) {
+  /* line 29, static/scss/main.scss */
+  .navbar-brand {
+    width: 33%;
+    text-align: left; }
+  /* line 34, static/scss/main.scss */
+  .navbar-menu {
+    width: 66%;
+    display: flex; }
+    /* line 37, static/scss/main.scss */
+    .navbar-menu .navbar-start {
+      width: 24.25%;
+      display: flex;
+      align-items: flex-end; }
+    /* line 41, static/scss/main.scss */
+    .navbar-menu .navbar-end {
+      width: 75.75%;
+      display: flex;
+      align-items: flex-end; } }

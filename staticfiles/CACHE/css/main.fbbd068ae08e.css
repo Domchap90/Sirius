@@ -1,0 +1,60 @@
+/* line 11, static/scss/main.scss */
+html.has-navbar-fixed-top, body.has-navbar-fixed-top {
+  padding-top: 0px; }
+
+/* line 14, static/scss/main.scss */
+html.has-navbar-fixed-bottom, body.has-navbar-fixed-bottom {
+  padding-bottom: 0px; }
+
+/* line 19, static/scss/main.scss */
+.navbar {
+  display: flex;
+  background-color: #86959c;
+  height: 140px; }
+
+/* line 25, static/scss/main.scss */
+.navbar-menu {
+  display: none; }
+
+/* line 29, static/scss/main.scss */
+.navbar-brand {
+  text-align: center; }
+
+/* line 33, static/scss/main.scss */
+#nav_logo {
+  height: 140px; }
+
+/* line 38, static/scss/main.scss */
+.navbar-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-decoration: none; }
+
+@media (min-width: 769px) {
+  /* line 46, static/scss/main.scss */
+  .navbar-brand {
+    width: 33%;
+    text-align: left; }
+  /* line 51, static/scss/main.scss */
+  .navbar-menu {
+    display: flex;
+    width: 66%; }
+    /* line 55, static/scss/main.scss */
+    .navbar-menu .navbar-start {
+      width: 24.25%;
+      display: flex;
+      align-items: flex-end; }
+    /* line 59, static/scss/main.scss */
+    .navbar-menu .navbar-end {
+      width: 75.75%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around; } }
+
+@media (min-width: 1024px) {
+  /* line 69, static/scss/main.scss */
+  .navbar-menu .navbar-start {
+    width: 50%; }
+  /* line 73, static/scss/main.scss */
+  .navbar-menu .navbar-end {
+    width: 50%; } }

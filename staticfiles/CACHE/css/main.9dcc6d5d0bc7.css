@@ -1,0 +1,39 @@
+/* line 1, static/scss/main.scss */
+html.has-navbar-fixed-top {
+  padding-top: 2.7rem; }
+
+/* line 5, static/scss/main.scss */
+.navbar {
+  display: flex;
+  background-color: #86959c;
+  height: 140px; }
+
+/* line 11, static/scss/main.scss */
+.navbar-brand {
+  text-align: center; }
+
+/* line 15, static/scss/main.scss */
+#nav_logo {
+  height: 140px; }
+
+/* line 20, static/scss/main.scss */
+.navbar-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  text-decoration: none; }
+
+@media (min-width: 769px) {
+  /* line 28, static/scss/main.scss */
+  .navbar-brand {
+    width: 33%;
+    text-align: left; }
+  /* line 33, static/scss/main.scss */
+  .navbar-menu {
+    width: 66%;
+    display: flex; }
+    /* line 36, static/scss/main.scss */
+    .navbar-menu .navbar-start {
+      width: 24.25%; }
+    /* line 39, static/scss/main.scss */
+    .navbar-menu .navbar-end {
+      width: 75.75%; } }

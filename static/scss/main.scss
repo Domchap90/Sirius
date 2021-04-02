@@ -1,0 +1,151 @@
+@import '../bulma/bulma.sass';
+
+$bg-color: #86959c;
+$main-color: #c4c9cc;
+$hover-color: #fafafa;
+
+$navbar-padding: 0px;
+$navbar-height: 140px;
+
+@mixin place-at-bottom{
+    display: flex;
+    align-items: flex-end;
+}
+
+/********************************************* Navigation - mobile */
+
+html.has-navbar-fixed-top {
+    padding-top: 2.7rem;
+}
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active {
+    background-color:$hover-color;
+    color: $bg-color;
+}
+
+.navbar {
+    display: flex;
+    background-color: $bg-color;
+    height: 140px;
+
+    .navbar-brand {
+        width: 100%;
+        padding-left: calc((100% - 282.744px)/2);
+
+        #logo_link {
+            padding: 0;
+
+            #nav_logo {
+                height: 140px;
+                max-height: 140px;
+                width: 282.744px;
+                max-width: 282.744px;
+                object-fit: cover;
+            }
+
+        }
+
+        #burger_container {
+            display: flex;
+            align-items: flex-end;
+            height: inherit;
+            width: 100%;
+
+            .navbar-burger {
+            }
+
+        }
+    }
+
+    .navbar-menu {
+        background-color: inherit;
+    }
+
+    .navbar-item {
+        font-family: 'Open Sans', sans-serif;
+        color: #FFF;
+        text-decoration: none;
+    }
+}
+
+/********************************************* Navigation - tablet */
+
+@media (min-width: $tablet) {
+
+    .navbar {
+
+        .navbar-brand {
+            width: auto;
+            padding-left: 0;
+        }
+
+        .navbar-menu {
+            display: flex;
+            width: calc(100% - 282.73px);
+            
+            .navbar-start {
+                width: 24.25%;
+                @include place-at-bottom;
+            }
+            .navbar-end {
+                width: 75.75%;
+                @include place-at-bottom;
+                justify-content: space-around;
+            }
+        }
+    }
+}
+
+/********************************************* Navigation - desktop */
+
+@media (min-width: $desktop) {
+
+    a.navbar-item.is-active:not(:focus):not(:hover),
+    .navbar-link.is-active:not(:focus):not(:hover) {
+        background-color:$hover-color;
+    }
+
+    .navbar {
+
+        .navbar-menu {
+            padding: 0.5rem 0;
+
+            .navbar-start {
+                width: 50%;
+                
+            }
+
+            .navbar-end {
+                width: 50%; 
+            }
+        }
+    }
+}
+
+/********************************************* Navigation - End */
+
+.below-nav {
+    height: auto;
+    min-height: calc(100vh - 140px);
+    margin-top: 97px;
+    background-color: $main-color;
+}
+
+#hero_image {
+    max-height: 419px;
+}
+
+@media (min-width: $tablet) {
+    #hero_image {
+        width: 100vw;
+        object-fit: cover;
+        object-position: 0 100%;
+    }
+}

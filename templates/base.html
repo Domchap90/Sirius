@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+{% load static %}
+{% load compress %}
+
+    <head>
+        <title>Sirius Wealth Management {% block extra_title %}{% endblock %}</title>
+        {% block meta %}
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% endblock %}
+    
+        {% block extra_meta %}
+        {% endblock %}
+    
+        {% block corecss %}
+
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Abel&family=Open+Sans&display=swap" rel="stylesheet">
+            {% load django_simple_bulma %}
+            {% bulma %}
+            <script src="https://kit.fontawesome.com/d19a086ec7.js" crossorigin="anonymous"></script>  
+
+        {% endblock %}
+        
+        {% compress css %}
+            <link type="text/x-scss" href="{% static 'scss/main.scss' %}" rel="stylesheet" media="screen">
+        {% endcompress %}
+
+        {% block extra_css %}
+        {% endblock %}
+    
+    
+        {% block corejs %}
+        {% endblock %}
+    
+        {% block extra_js %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <header>
+            
+            <nav class="navbar is-fixed-top is-mobile" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a href="{% url 'home' %}" class="navbar-item" id="logo_link">
+                        <img src="{% static 'images/sirius_logo_grey_bg.jpg' %}" alt="Sirius logo" id="nav_logo">
+                    </a>
+                    
+                    <div class="is-hidden-tablet" id="burger_container">
+                        <a role="button" class="navbar-burger is-hidden-tablet" aria-label="menu" aria-expanded="false" id="burger_button">
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                            <span aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+
+                {% with request.resolver_match.url_name as url_name %}
+                <div class="navbar-menu is-hidden-mobile" id="navMenuTouch">
+                    <div class="navbar-start"></div>
+                    <div class="navbar-end">  
+                        <a class="navbar-item {% if url_name == 'home' %}is-active{% endif %}" href="{% url 'home' %}">Home</a>
+                        <a class="navbar-item" href="">About Us</a>
+                        <a class="navbar-item " href="">Services</a>
+                        <a class="navbar-item" href="">Contact Us</a>
+                    </div>
+                </div> 
+                {% endwith %}
+            </nav>      
+ 
+        </header>
+
+
+        {% block content %}
+        {% endblock %}
+
+        
+        {% if messages %}
+            <!-- <div id="message_container">
+                {% for message in messages %}
+                {% if message.level == 25 %}
+                    <p class="is-hidden success">{{ message }}</p>
+                {% else %}
+                    <p class="is-hidden error">{{ message }}</p>
+                {% endif %}
+                
+                {% endfor %}
+            </div> -->
+
+        {% endif %}
+
+        <footer class="footer">       
+        </footer>
+
+        <!-- <script src="{% static 'js/base.js' %}"></script>
+        <script src="{% static 'js/messages.js' %}"></script> -->
+        
+
+        {% block postloadjs %}
+        {% endblock %}
+
+    </body>
+
+</html>
