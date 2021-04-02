@@ -139,13 +139,42 @@ a.navbar-item.is-active,
 }
 
 #hero_image {
-    max-height: 419px;
+    max-height: 166.64px;
+    width: 100vw;
+    object-fit: cover;
+    object-position: 0 100%;
+}
+
+#logo_pentagon {
+    position: absolute;
+    top: 253px;
+    left: calc(50% - 75px);
+    width: 150px;
+}
+
+@media (min-width: 450px) {
+    #hero_image {
+        max-height: 241.5px;
+    }
+
+    #logo_pentagon {
+        top: 328px;
+    }
 }
 
 @media (min-width: $tablet) {
     #hero_image {
-        width: 100vw;
-        object-fit: cover;
-        object-position: 0 100%;
+        max-height: 310px;
     }
+
+    #logo_pentagon {
+        top: 378px;
+        left: calc(50% - 100px);
+        width: 200px;
+    }
+}
+
+.text-container {
+    background-color: white;
+    height: 500px;
 }
