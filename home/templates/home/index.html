@@ -3,9 +3,33 @@
 
 {% block content %}
     <div class="below-nav">
+
         <img src="{% static 'images/hero_stock_image.jpg' %}" alt="Image of financial concept" id="hero_image">
         <img src="{% static 'images/logo_star.png' %}" alt="Logo divider" id="logo_pentagon">
 
-        <div class="text-container"></div>
+        <div class="profile_image_container is-hidden-tablet">
+            <img src="{% static 'images/darren_profile.jpg' %}" alt="Image of Darren Manser" class="profile_image">
+        </div>
+
+        <div class="mission_statement is-hidden-tablet">
+            <h2>
+                Take your first step towards financial freedom with tailored
+                lifestyle planning that helps you create the life you want.
+            </h2>
+        </div>
+
+        <div class="is-hidden-mobile" id="image_statement_container">
+            <div class="profile_image_container">
+                <img src="{% static 'images/darren_profile.jpg' %}" alt="Image of Darren Manser" class="profile_image">
+            </div>
+
+            <div class="mission_statement">
+                <h2>
+                    Take your first step towards financial freedom with tailored
+                    lifestyle planning that helps you create the life you want.
+                </h2>
+            </div>
+        </div>
+
     </div>
 {% endblock %}

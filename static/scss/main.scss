@@ -1,7 +1,10 @@
 @import '../bulma/bulma.sass';
 
+/********************************************* Variables - colors */
+
 $bg-color: #86959c;
 $main-color: #c4c9cc;
+$secondary-bg-color: #9C8D86;
 $hover-color: #fafafa;
 
 $navbar-padding: 0px;
@@ -70,7 +73,7 @@ a.navbar-item.is-active,
 
     .navbar-item {
         font-family: 'Open Sans', sans-serif;
-        color: #FFF;
+        color: #fff;
         text-decoration: none;
     }
 }
@@ -135,7 +138,7 @@ a.navbar-item.is-active,
     height: auto;
     min-height: calc(100vh - 140px);
     margin-top: 97px;
-    background-color: $main-color;
+    background-color:  #fff;
 }
 
 #hero_image {
@@ -152,6 +155,27 @@ a.navbar-item.is-active,
     width: 150px;
 }
 
+.profile_image_container {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 50px 0;
+}
+
+.profile_image {
+    width: 230px;
+}
+
+.mission_statement {
+    background-color: $secondary-bg-color;
+    padding: 40px;
+
+    h2 {
+        color: #000;
+        font-size: 24px;
+        max-width: 500px;
+    }
+}
+
 @media (min-width: 450px) {
     #hero_image {
         max-height: 241.5px;
@@ -159,6 +183,19 @@ a.navbar-item.is-active,
 
     #logo_pentagon {
         top: 328px;
+    }
+
+    .mission_statement {
+        padding: 50px;
+    }
+}
+
+@media (min-width: 600px) {
+    .mission_statement {
+        padding-left: calc((100% - 500px)/2);
+
+        h2 {
+        }
     }
 }
 
@@ -171,6 +208,57 @@ a.navbar-item.is-active,
         top: 378px;
         left: calc(50% - 100px);
         width: 200px;
+    }
+
+    #image_statement_container {
+        display: flex;
+        margin-top: 150px;
+        margin-left: calc((100% - 610px)/2);
+        height: 300px;
+    }
+
+    .profile_image_container {
+        margin-top: 0px;
+        height: inherit;
+
+        .profile_image {
+            width: 200px;
+            height: inherit;
+        }
+    }
+
+    .mission_statement {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            width: 350px;
+        }
+    }
+
+}
+
+@media (min-width: $desktop) {
+    #image_statement_container {
+        margin-left: calc((100% - 750px)/2);
+        height: 375px;
+    }
+
+    .profile_image_container {
+
+        .profile_image {
+            width: 250px;
+        }
+    }
+
+    .mission_statement {
+        padding: 50px;
+        
+        h2 {
+            width: 400px;
+        }
     }
 }
 
