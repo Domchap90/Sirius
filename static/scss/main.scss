@@ -1,14 +1,24 @@
 @import '../bulma/bulma.sass';
+@import '../bulma-carousel/src/sass/index.sass';
 
 /********************************************* Variables - colors */
 
 $bg-color: #86959c;
 $main-color: #c4c9cc;
 $secondary-bg-color: #9C8D86;
+$tertiary-bg-color: #869c8d;
 $hover-color: #fafafa;
+
+/********************************************* Variables - spacing */
+
+$widemobile: 450px;
 
 $navbar-padding: 0px;
 $navbar-height: 140px;
+$mobile-padding: 40px;
+$widemobile-padding: 50px;
+
+/********************************************* Mixins */
 
 @mixin place-at-bottom{
     display: flex;
@@ -36,7 +46,8 @@ a.navbar-item.is-active,
 .navbar {
     display: flex;
     background-color: $bg-color;
-    height: 140px;
+    width: 100vw;
+    height: $navbar-height;
 
     .navbar-brand {
         width: 100%;
@@ -46,8 +57,8 @@ a.navbar-item.is-active,
             padding: 0;
 
             #nav_logo {
-                height: 140px;
-                max-height: 140px;
+                height: $navbar-height;
+                max-height: $navbar-height;
                 width: 282.744px;
                 max-width: 282.744px;
                 object-fit: cover;
@@ -136,7 +147,7 @@ a.navbar-item.is-active,
 
 .below-nav {
     height: auto;
-    min-height: calc(100vh - 140px);
+    min-height: calc(100vh - $navbar-height);
     margin-top: 97px;
     background-color:  #fff;
 }
@@ -167,16 +178,16 @@ a.navbar-item.is-active,
 
 .mission_statement {
     background-color: $secondary-bg-color;
-    padding: 40px;
+    padding: $mobile-padding;
 
-    h2 {
+    p {
         color: #000;
         font-size: 24px;
         max-width: 500px;
     }
 }
 
-@media (min-width: 450px) {
+@media (min-width: $widemobile) {
     #hero_image {
         max-height: 241.5px;
     }
@@ -186,7 +197,7 @@ a.navbar-item.is-active,
     }
 
     .mission_statement {
-        padding: 50px;
+        padding: $widemobile-padding;
     }
 }
 
@@ -194,7 +205,7 @@ a.navbar-item.is-active,
     .mission_statement {
         padding-left: calc((100% - 500px)/2);
 
-        h2 {
+        p {
         }
     }
 }
@@ -233,7 +244,7 @@ a.navbar-item.is-active,
         justify-content: center;
         align-items: center;
 
-        h2 {
+        p {
             width: 350px;
         }
     }
@@ -256,13 +267,105 @@ a.navbar-item.is-active,
     .mission_statement {
         padding: 50px;
         
-        h2 {
+        p {
             width: 400px;
         }
     }
 }
 
-.text-container {
-    background-color: white;
-    height: 500px;
+/********************************************* Testimonials */
+
+#testimonial_carousel *:focus {
+    outline: none;
+}
+
+.subtitle {
+    // Override Bulma default margin
+    margin-bottom: 0 !important;
+    
+    padding: $mobile-padding;
+    font-family: "Open Sans", sans-serif;
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.testimonial {
+    background-color: $tertiary-bg-color;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    padding: $mobile-padding;
+
+    .client-name {
+        display: block;
+        width: 100%;
+        margin-top: 7px;
+        text-align: end;
+        font-weight: bold;
+    }
+}
+
+.slider-navigation-previous,
+.slider-navigation-next {
+    border: none;
+}
+
+@media (min-width: $widemobile) {
+    .subtitle {
+        padding: $widemobile-padding;
+    } 
+
+    .testimonial {
+        padding: $widemobile-padding;
+    }
+
+}
+
+@media (min-width: $tablet) {
+    .subtitle {
+    }
+
+    .carousel-item {
+        // padding-left: calc((100vw - 650px)/2);
+        display: flex;
+        justify-content: center;
+
+        .testimonial{
+            max-width: 650px;
+        }
+    }
+}
+
+@media (min-width: 825px) {
+    .slider-navigation-next {
+        right: calc((100vw - 650px)/8);
+    }
+    .slider-navigation-previous {
+        left: calc((100vw - 650px)/8);
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider-container {
+        width: 80vw !important;
+        margin-left: 10vw;
+        display: flex;
+        justify-content: space-around;
+
+        .slider-item {
+            max-width: 400px;
+            padding-left: 0;
+
+            .testimonial {
+                max-width: inherit;
+            }
+        }
+    }
+
+    .slider-navigation-next {
+        right: 0;
+    }
+    .slider-navigation-previous {
+        left: 0;
+    }
 }

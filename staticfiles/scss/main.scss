@@ -1,68 +1,320 @@
+@import '../bulma/bulma.sass';
+@import '../bulma-carousel/src/sass/index.sass';
+
+/********************************************* Variables - colors */
+
+$bg-color: #86959c;
+$main-color: #c4c9cc;
+$secondary-bg-color: #9C8D86;
+$tertiary-bg-color: #869c8d;
+$hover-color: #fafafa;
+
+/********************************************* Variables - spacing */
+
+$widemobile: 450px;
+
 $navbar-padding: 0px;
 $navbar-height: 140px;
+$mobile-padding: 40px;
+$widemobile-padding: 50px;
+
+/********************************************* Mixins */
 
 @mixin place-at-bottom{
     display: flex;
     align-items: flex-end;
 }
 
+/********************************************* Navigation - mobile */
+
+html.has-navbar-fixed-top {
+    padding-top: 2.7rem;
+}
+
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover,
+a.navbar-item.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+.navbar-link.is-active {
+    background-color:$hover-color;
+    color: $bg-color;
+}
 
 .navbar {
     display: flex;
-    background-color: #86959c;
-    height: 140px;
+    background-color: $bg-color;
+    width: 100vw;
+    height: $navbar-height;
+
+    .navbar-brand {
+        width: 100%;
+        padding-left: calc((100% - 282.744px)/2);
+
+        #logo_link {
+            padding: 0;
+
+            #nav_logo {
+                height: $navbar-height;
+                max-height: $navbar-height;
+                width: 282.744px;
+                max-width: 282.744px;
+                object-fit: cover;
+            }
+
+        }
+
+        #burger_container {
+            display: flex;
+            align-items: flex-end;
+            height: inherit;
+            width: 100%;
+
+            .navbar-burger {
+            }
+
+        }
+    }
+
+    .navbar-menu {
+        background-color: inherit;
+    }
+
+    .navbar-item {
+        font-family: 'Open Sans', sans-serif;
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
-.navbar-menu {
-    display: none;
+/********************************************* Navigation - tablet */
+
+@media (min-width: $tablet) {
+
+    .navbar {
+
+        .navbar-brand {
+            width: auto;
+            padding-left: 0;
+        }
+
+        .navbar-menu {
+            display: flex;
+            width: calc(100% - 282.73px);
+            
+            .navbar-start {
+                width: 24.25%;
+                @include place-at-bottom;
+            }
+            .navbar-end {
+                width: 75.75%;
+                @include place-at-bottom;
+                justify-content: space-around;
+            }
+        }
+    }
 }
 
-.navbar-brand {
-    width: 100%;
+/********************************************* Navigation - desktop */
+
+@media (min-width: $desktop) {
+
+    a.navbar-item.is-active:not(:focus):not(:hover),
+    .navbar-link.is-active:not(:focus):not(:hover) {
+        background-color:$hover-color;
+    }
+
+    .navbar {
+
+        .navbar-menu {
+            padding: 0.5rem 0;
+
+            .navbar-start {
+                width: 50%;
+                
+            }
+
+            .navbar-end {
+                width: 50%; 
+            }
+        }
+    }
+}
+
+/********************************************* Navigation - End */
+
+.below-nav {
+    height: auto;
+    min-height: calc(100vh - $navbar-height);
+    margin-top: 97px;
+    background-color:  #fff;
+}
+
+#hero_image {
+    max-height: 166.64px;
+    width: 100vw;
+    object-fit: cover;
+    object-position: 0 100%;
+}
+
+#logo_pentagon {
+    position: absolute;
+    top: 253px;
+    left: calc(50% - 75px);
+    width: 150px;
+}
+
+.profile_image_container {
+    display: flex;
+    justify-content: center;
+    margin: 100px 0 50px 0;
+}
+
+.profile_image {
+    width: 230px;
+}
+
+.mission_statement {
+    background-color: $secondary-bg-color;
+    padding: $mobile-padding;
+
+    p {
+        color: #000;
+        font-size: 24px;
+        max-width: 500px;
+    }
+}
+
+@media (min-width: $widemobile) {
+    #hero_image {
+        max-height: 241.5px;
+    }
+
+    #logo_pentagon {
+        top: 328px;
+    }
+
+    .mission_statement {
+        padding: $widemobile-padding;
+    }
+}
+
+@media (min-width: 600px) {
+    .mission_statement {
+        padding-left: calc((100% - 500px)/2);
+
+        p {
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    #hero_image {
+        max-height: 310px;
+    }
+
+    #logo_pentagon {
+        top: 378px;
+        left: calc(50% - 100px);
+        width: 200px;
+    }
+
+    #image_statement_container {
+        display: flex;
+        margin-top: 150px;
+        margin-left: calc((100% - 610px)/2);
+        height: 300px;
+    }
+
+    .profile_image_container {
+        margin-top: 0px;
+        height: inherit;
+
+        .profile_image {
+            width: 200px;
+            height: inherit;
+        }
+    }
+
+    .mission_statement {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+            width: 350px;
+        }
+    }
+
+}
+
+@media (min-width: $desktop) {
+    #image_statement_container {
+        margin-left: calc((100% - 750px)/2);
+        height: 375px;
+    }
+
+    .profile_image_container {
+
+        .profile_image {
+            width: 250px;
+        }
+    }
+
+    .mission_statement {
+        padding: 50px;
+        
+        p {
+            width: 400px;
+        }
+    }
+}
+
+.subtitle {
+    // Override Bulma default margin
+    margin-bottom: 0 !important;
+    
+    padding: $mobile-padding;
+    font-family: "Open Sans", sans-serif;
+    font-size: 28px;
+    text-transform: capitalize;
     text-align: center;
 }
 
-#nav_logo {
-    height: 140px;
-}
+.testimonial {
+    background-color: $tertiary-bg-color;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    padding: $mobile-padding;
 
-.navbar-item {
-    font-family: 'Open Sans', sans-serif;
-    color: #FFF;
-    text-decoration: none;
-}
-
-@media (min-width: 769px) {
-
-    .navbar-brand {
-        width: 33%;
-        text-align: left;
-    }
-
-    .navbar-menu {
-        display: flex;
-        width: 66%;
-        
-        .navbar-start {
-            width: 24.25%;
-            @include place-at-bottom;
-        }
-        .navbar-end {
-            width: 75.75%;
-            @include place-at-bottom;
-            justify-content: space-around;
-        }
+    .client-name {
+        display: block;
+        width: 100%;
+        margin-top: 7px;
+        text-align: end;
+        font-weight: bold;
     }
 }
 
-@media (min-width: 1024px) {
-    .navbar-menu {
-        .navbar-start {
-            width: 50%;
-            
-        }
-        .navbar-end {
-            width: 50%; 
-        }
+@media (min-width: $widemobile) {
+    .subtitle {
+        padding: $widemobile-padding;
+    }
+
+    .testimonial {
+        padding: $widemobile-padding;
+    }
+
+}
+
+@media (min-width: $tablet) {
+    .subtitle {
+    }
+
+    .testimonial {
+        margin: 0 50px;
     }
 }

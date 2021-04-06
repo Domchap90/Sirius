@@ -156,7 +156,7 @@ if 'DEVELOPMENT' not in os.environ:
 BULMA_SETTINGS = {
     "extensions": [
         "bulma-collapsible",
-        "bulma-calendar",
+        "bulma-carousel",
     ],
     "variables": {
         "primary": "#000000",

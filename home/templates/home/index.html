@@ -12,10 +12,10 @@
         </div>
 
         <div class="mission_statement is-hidden-tablet">
-            <h2>
+            <p>
                 Take your first step towards financial freedom with tailored
                 lifestyle planning that helps you create the life you want.
-            </h2>
+            </p>
         </div>
 
         <div class="is-hidden-mobile" id="image_statement_container">
@@ -24,12 +24,79 @@
             </div>
 
             <div class="mission_statement">
-                <h2>
+                <p>
                     Take your first step towards financial freedom with tailored
                     lifestyle planning that helps you create the life you want.
-                </h2>
+                </p>
             </div>
+
+        </div>
+
+
+        <h2 class="subtitle">Why i chose sirius wealth management?</h2>
+
+        <div id="testimonial_carousel" class="carousel">
+
+            <div class="item-1 carousel-item">
+                <div class="testimonial">
+                    I was about to go through a divorce, and Darren helped me engage with
+                    other professionals that were very helpful. With the Solicitor and Rupert,
+                    I found this time much easier than it could have been. We have met regularly,
+                    and my financial plan has changed many times over the years, given my 
+                    changes in circumstances. Darren has been very patient with me. I have 
+                    recommended Sirius to friends. <br>
+                    <span class="client-name">- John Docherty</span>
+                </div>
+            </div>
+
+            <div class="item-2 carousel-item">
+                <div class="testimonial">
+                    I was about to go through a divorce, and Darren helped me engage with
+                    other professionals that were very helpful. With the Solicitor and Rupert,
+                    I found this time much easier than it could have been. We have met regularly,
+                    and my financial plan has changed many times over the years, given my
+                    changes in circumstances. Darren has been very patient with me. I have
+                    recommended Sirius to friends. <br>
+                    <span class="client-name">- Sally Fields</span>
+                </div>
+            </div>
+
         </div>
 
     </div>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript" src="{% static 'bulma-carousel/dist/js/bulma-carousel.min.js' %}"></script>
+<script>
+
+    bulmaCarousel.attach('#testimonial_carousel', {
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        breakpoints: [{
+            changePoint: 1023,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        },
+        // {
+        //     changePoint: 640,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        // },
+        // {
+        //     changePoint: 768,
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        // },
+        {
+            changePoint: 1500,
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+        ]
+    });
+
+</script>
+
 {% endblock %}
