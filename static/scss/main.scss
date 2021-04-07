@@ -145,6 +145,19 @@ a.navbar-item.is-active,
 
 /********************************************* Navigation - End */
 
+/********************************************* Footer - Start */
+
+#logo_container{
+    width: 100%;
+    text-align: center;
+
+    #footer_logo {
+        width: 300px;
+    }
+}
+
+/********************************************* Footer - End */
+
 .below-nav {
     height: auto;
     min-height: calc(100vh - $navbar-height);
@@ -367,5 +380,46 @@ a.navbar-item.is-active,
     }
     .slider-navigation-previous {
         left: 0;
+    }
+}
+
+/********************************************* Service Intro */
+
+#card_container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    max-width: 335px;
+    margin: 0 auto 20px auto;
+    background-color: $main-color;
+}
+
+.service-title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+}
+
+#retirement_img {
+    object-fit: cover;
+    object-position: 0;
+}
+
+@media (min-width: $widemobile) {
+    #card_container {
+        padding: $widemobile-padding;
+    }
+}
+
+@media (min-width: $desktop) {
+    #card_container {
+
     }
 }
