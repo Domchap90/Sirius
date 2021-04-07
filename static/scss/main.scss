@@ -385,7 +385,7 @@ a.navbar-item.is-active,
     }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $desktop) {
     .slider-container {
         width: 80vw !important;
         margin-left: 10vw;
@@ -461,11 +461,13 @@ a.navbar-item.is-active,
         justify-content: center;
         padding-bottom: 40px;
     }
+
     #contact_info_container {
         @include center-horizontally;
 
         .contact-info {
-            width: 66%;
+            width: 230px;
+            display: block;
             font-size: 20px;
 
             li {
@@ -488,5 +490,27 @@ a.navbar-item.is-active,
             }
         }
 
+    }
+}
+
+@media (min-width: $tablet) {
+    #contact_intro {
+        #contact_info_container {
+            .contact-info {
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@media (min-width: $tablet) {
+    #contact_intro {
+        #contact_info_container {
+            .contact-info {
+                width: 800px;
+            }
+        }
     }
 }
