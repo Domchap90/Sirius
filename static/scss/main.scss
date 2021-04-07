@@ -3,11 +3,32 @@
 
 /********************************************* Variables - colors */
 
-$bg-color: #86959c;
-$main-color: #c4c9cc;
-$secondary-bg-color: #9C8D86;
-$tertiary-bg-color: #869c8d;
+$grey: #86959c;
+$silver: #c4c9cc;
+$red: #9C8D86;
+$green: #869c8d;
+$dark-grey: #616466;
 $hover-color: #fafafa;
+
+.grey {
+    background-color: $grey;
+}
+
+.silver {
+    background-color: $silver;
+}
+
+.red {
+    background-color: $red;
+}
+
+.green {
+    background-color: $green;
+}
+
+.dark-grey {
+    background-color: $dark-grey;
+}
 
 /********************************************* Variables - spacing */
 
@@ -25,6 +46,12 @@ $widemobile-padding: 50px;
     align-items: flex-end;
 }
 
+@mixin center-horizontally {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 /********************************************* Navigation - mobile */
 
 html.has-navbar-fixed-top {
@@ -39,13 +66,13 @@ a.navbar-item.is-active,
 .navbar-link:focus-within,
 .navbar-link:hover,
 .navbar-link.is-active {
-    background-color:$hover-color;
-    color: $bg-color;
+    background-color: $hover-color;
+    color: $grey;
 }
 
 .navbar {
     display: flex;
-    background-color: $bg-color;
+    background-color: $grey;
     width: 100vw;
     height: $navbar-height;
 
@@ -189,8 +216,8 @@ a.navbar-item.is-active,
     width: 230px;
 }
 
-.mission_statement {
-    background-color: $secondary-bg-color;
+.mission-statement {
+    background-color: $red;
     padding: $mobile-padding;
 
     p {
@@ -209,13 +236,13 @@ a.navbar-item.is-active,
         top: 328px;
     }
 
-    .mission_statement {
+    .mission-statement {
         padding: $widemobile-padding;
     }
 }
 
 @media (min-width: 600px) {
-    .mission_statement {
+    .mission-statement {
         padding-left: calc((100% - 500px)/2);
 
         p {
@@ -251,7 +278,7 @@ a.navbar-item.is-active,
         }
     }
 
-    .mission_statement {
+    .mission-statement {
         padding: 30px;
         display: flex;
         justify-content: center;
@@ -277,7 +304,7 @@ a.navbar-item.is-active,
         }
     }
 
-    .mission_statement {
+    .mission-statement {
         padding: 50px;
         
         p {
@@ -304,7 +331,7 @@ a.navbar-item.is-active,
 }
 
 .testimonial {
-    background-color: $tertiary-bg-color;
+    background-color: $green;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     padding: $mobile-padding;
@@ -394,7 +421,7 @@ a.navbar-item.is-active,
 .card {
     max-width: 335px;
     margin: 0 auto 20px auto;
-    background-color: $main-color;
+    background-color: $silver;
 }
 
 .service-title {
@@ -420,6 +447,46 @@ a.navbar-item.is-active,
 
 @media (min-width: $desktop) {
     #card_container {
+
+    }
+}
+
+/********************************************* Contact Intro */
+
+#contact_intro {
+    background-color: $dark-grey;
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 40px;
+    }
+    #contact_info_container {
+        @include center-horizontally;
+
+        .contact-info {
+            width: 66%;
+            font-size: 20px;
+
+            li {
+                display: flex;
+            }
+        }
+    }
+
+    #social_links_container {
+        @include center-horizontally;
+
+        .social-links {
+            width: 66%;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-around;
+            
+            a i {
+                color: $silver;
+            }
+        }
 
     }
 }
