@@ -331,7 +331,6 @@ a.navbar-item.is-active,
 }
 
 .testimonial {
-    background-color: $green;
     font-family: "Roboto", sans-serif;
     font-size: 18px;
     padding: $mobile-padding;
@@ -407,6 +406,13 @@ a.navbar-item.is-active,
     }
     .slider-navigation-previous {
         left: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider-navigation-previous,
+    .slider-navigation-next {
+        display: none;
     }
 }
 
